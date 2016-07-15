@@ -205,8 +205,8 @@ public class Pinyin4jUtil {
 //    	String result = getPinyinToUpperCase("人生得意须尽欢，莫使金樽空对月。");
 //    	String result = getPinyinToLowerCase("人生得意须尽欢，莫使金樽空对月。");
 //    	String result = getPinyinJianPin("人生得意须尽欢，莫使金樽空对月。");
-    	String result = getPinyin("行使");
-    	System.out.println(result);
+//    	String result = getPinyin("行使");
+//    	System.out.println(result);
     }
 	
 }
