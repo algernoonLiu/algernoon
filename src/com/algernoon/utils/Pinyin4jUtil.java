@@ -202,11 +202,11 @@ public class Pinyin4jUtil {
 //			System.out.println(str + "\t");
 //		}
 //    	String result = getPinyin("人生得意须尽欢，莫使金樽空对月。");
-//    	String result = getPinyinToUpperCase("人生得意须尽欢，莫使金樽空对月。");
+    	String result = getPinyinToUpperCase("人生得意须尽欢，莫使金樽空对月。");
 //    	String result = getPinyinToLowerCase("人生得意须尽欢，莫使金樽空对月。");
 //    	String result = getPinyinJianPin("人生得意须尽欢，莫使金樽空对月。");
 //    	String result = getPinyin("行使");
-//    	System.out.println(result);
+    	System.out.println(result);
     }
 	
 }
