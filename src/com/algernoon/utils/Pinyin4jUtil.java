@@ -163,14 +163,14 @@ public class Pinyin4jUtil {
      * @param s String字符串
      * @return a-z对应的大写字母
      */
-    public static String capitalize(String s) {  
+    public static String capitalize(String s) { 
         char ch[];  
         ch = s.toCharArray();  
         if (ch[0] >= 'a' && ch[0] <= 'z') {  
             ch[0] = (char) (ch[0] - 32);  
         }  
         String newString = new String(ch);  
-        return newString;  
+        return newString;
     }
     
     /**
