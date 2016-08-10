@@ -93,7 +93,7 @@ public class CSDNUtil implements Runnable{
 
 	@Override
 	public void run() {
-		List<String> urlList = getUrlList("E:\\workspace\\algernoon\\resource\\csdn-url.txt");
+		List<String> urlList = getUrlList("E:\\myworkspace\\algernoon\\resource\\csdn-url.txt");
 		int urlSize = urlList.size(); // url数量
 		while(true){
 			Random random = new Random();
@@ -101,8 +101,8 @@ public class CSDNUtil implements Runnable{
 			System.out.println("url:  " + urlList.get(nextInt));
 			doGet(urlList.get(nextInt));
 			try {
-				int sleep  = new Random().nextInt(500) * 1000;
-				System.out.println("休息"+sleep/1000/60+"分钟");
+				int sleep  = new Random().nextInt(1000) * 10;
+				System.out.println("休息"+sleep/1000+"秒");
 				Thread.sleep(sleep);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

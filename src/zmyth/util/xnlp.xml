@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xnlp>
+	<!-- 组别更新 -->
+	<!-- record为版本记录文件 -->
+	<!-- version为版本号，没有则默认为0。如果当前的版本号和版本记录文件中的版本号不一致，则显示描述信息并退出 -->
+	<!-- check为在版本号相同的情况下，是否对本组文件进行crc校验。没有则默认为0。为1表示进行校验 -->
+	<!-- description为组别描述信息 -->
+	<group record="versions1.dat" version="0.9" check="1" description="">
+		<!-- 文件更新 -->
+		<!-- dest为目标文件，必须有 -->
+		<!-- src为源地址，如果没有表示删除目标文件 -->
+		<!-- version为版本号，只和本地版本比较是否相同，如果没有则本地不记录版本，并每次都下载 -->
+		<!-- size为文件大小，crc为文件crc校验码。size和crc可以没有，如果有一般同时出现。文件下载后会比较size和crc，判断是否下载正确。如果文件没有本地版本，则比较size和crc确定是否需要下载 -->
+		<!-- description为文件描述信息 -->
+		<file dest="seasky.zar" src="http://test/version/isle/seasky.zar" version="1.11" size="1014515" crc="0x87f04e25" description="基础文件"></file>
+		<file dest="start.cfg" src="http://test/version/isle/start.cfg" size="" crc="" description="配置文件"></file>
+	</group>
+
+	<group record="versions2.dat">
+		<file dest="chorseimg.zar" src="http://test/version/isle/chorseimg.zar" version="1.11" size="" crc="" description="赛马图像文件"></file>
+		<file dest="chorsesound.zar" src="http://test/version/isle/chorsesound.zar" version="1.00"></file>
+	</group>
+
+	<action command="bin/isle.exe -cp . zmyth.xlib.Start start.dat" description=""/>
+
+</xnlp>

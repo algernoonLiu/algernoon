@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE><!--[title/]--></TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+<!--[name/]-->
+<BODY>
+<TABLE border="2" width="100%">
+<!--[group]-->
+<TR>
+	<TD>&nbsp;<!--[group.$/]--></TD>
+	<TD>&nbsp;<!--[group.name.$/]--></TD>
+	<TD>&nbsp;<!--[group.type/]--></TD>
+	<TD>&nbsp;<!--[group.group/]--></TD>
+	<TD>&nbsp;
+		<!--[group.list]-->
+			<!--[group.list.show/]-->&nbsp;<!--[name/]-->&nbsp;<!--[group.xyz/]-->&nbsp;<!--[tttt.aaa/]--><BR>
+		<!--[/group.list]-->
+	</TD>
+	<TD>&nbsp;
+		<!--[tttt]-->
+			<!--[tttt.aaa/]-->&nbsp;<!--[name/]-->&nbsp;<!--[group.xyz/]--><BR>
+		<!--[/tttt]-->
+	</TD>
+</TR>
+<!--[/group]-->
+</TABLE>
+	<div><FONT SIZE="16" COLOR="red">
+		<!--[group.list]-->
+			<!--[group.list.show/]-->&nbsp;<!--[name/]-->&nbsp;<!--[group.xyz/]--><BR>
+		<!--[/group.list]-->
+	</FONT></div>
+</BODY>
+</HTML>
+<!-- 
+使用范例：
+	public static void template(String[] args) throws Throwable
+	{
+		Template t=new Template();
+		FileReader reader=new FileReader(new File("template.html"));
+		t.read(reader);
+		Element e=new Element();
+		e.setAttribute("title","no title");
+		e.setAttribute("name","no name");
+		Element ee,ee1,eee;
+		for(int i=0;i<3;i++)
+		{
+			ee=new Element("group");
+			//$为默认变量，代表元素中第一段文字
+			ee1.addContent(XmlReader.TEXT,"xxx"+i);
+			ee1=new Element("name");
+			ee1.addContent(XmlReader.TEXT,"gname"+i);
+			ee.addElement(ee1);
+			ee.setAttribute("type","gtype"+i);
+			ee.setAttribute("group","ggroup"+i);
+			ee.setAttribute("xyz","xyz"+i);
+			e.addContent(ee);
+			for(int j=0;j<2;j++)
+			{
+				eee=new Element("list");
+				eee.setAttribute("show","show"+i+""+j);
+				ee.addContent(eee);
+			}
+		}
+		for(int i=0;i<3;i++)
+		{
+			ee=new Element("tttt");
+			ee.setAttribute("aaa","aaa"+i);
+			e.addContent(ee);
+		}
+		FileWriter fw=new FileWriter(new File("out.html"));
+		t.write(fw,e);
+		fw.flush();
+		fw.close();
+	}
+
+-->

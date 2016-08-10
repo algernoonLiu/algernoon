@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk"?>
+<template_data title="no title" name="no name">
+<group name="gname0" type="gtype0" group="group0" xyz="xyz0">
+	<list show="show00"/>
+	<list show="show01"/>
+</group>
+<group name="gname1" type="gtype1" group="ggroup1" xyz="xyz1">
+	<list show="show10"/>
+	<list show="show11"/>
+</group>
+<group name="gname2" type="gtype2" group="ggroup2" xyz="xyz2">
+	<list show="show20"/>
+	<list show="show21"/>
+</group>
+<tttt aaa="aaa0"/>
+<tttt aaa="aaa1"/>
+<tttt aaa="aaa2"/>
+</template_data>

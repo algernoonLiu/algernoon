@@ -2,6 +2,7 @@ package com.algernoon.utils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +22,7 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpUtils {
 
-	 /**
+    /**
      * 通过GET方式发起http请求
      */
     public static void doGet(String url){
@@ -39,8 +40,8 @@ public class HttpUtils {
                 if (null != entity){
                     System.out.println("响应状态码:"+ httpResponse.getStatusLine());
                     System.out.println("-------------------------------------------------");
-                    System.out.println("响应内容:" + EntityUtils.toString(entity));
-                    System.out.println("-------------------------------------------------");                    
+                    System.out.println("响应内容:" + EntityUtils.toString(entity,"utf-8"));
+                    System.out.println("-------------------------------------------------");  
                 }
             }
             finally{
@@ -78,7 +79,7 @@ public class HttpUtils {
                 HttpEntity entity = httpResponse.getEntity();
                 if (null != entity){
                     System.out.println("-------------------------------------------------------");
-                    System.out.println(EntityUtils.toString(uefEntity));
+                    System.out.println(EntityUtils.toString(entity));
                     System.out.println("-------------------------------------------------------");
                 }
             } finally{
@@ -113,6 +114,9 @@ public class HttpUtils {
     
     private static List<NameValuePair> handleRequestParams(Map<String, Object> requestParams){
     	List<NameValuePair> list = new ArrayList<NameValuePair>();
+    	if (requestParams == null) {
+	    return list;
+	}
     	Iterator<Entry<String, Object>> it = requestParams.entrySet().iterator();
     	while (it.hasNext()) {
 			Map.Entry<String, Object> entry = it.next();
@@ -122,4 +126,9 @@ public class HttpUtils {
 		}
         return list;
     }
+    
+    public static void main(String[] args) {
+	doPost("http://106.38.38.178:8000/api/sync/getTmsChanels", null);
+    }
+    
 }
