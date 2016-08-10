@@ -7,4 +7,6 @@ import com.opensymphony.xwork2.ActionSupport;
 //@Result(name="success",location="/login.jsp")
 public class LoginAction extends ActionSupport{
 	
+    
+    
 }
